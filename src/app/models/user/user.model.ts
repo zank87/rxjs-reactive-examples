@@ -1,9 +1,8 @@
-export interface IProfile {
-  firstName: string
-  lastName: string
+export interface IUser {
+  id: number
+  first_name: string
+  last_name: string
   email: string
-  birthDate: Date
-  bio: string
-  profilePictureURL: string
-  followerCount: number
+  gender: string
+  ip_address: string
 }

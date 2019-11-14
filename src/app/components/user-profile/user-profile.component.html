@@ -37,4 +37,17 @@
     <div class="profile-count">{{ 0 + (userProfiles$ | async)?.length }} profiles loaded</div>
   </div>
   <button class="btn btn-submit" (click)="loadProfiles()">Load Profiles</button>
+
+  <div class="users-data" [ngClass]="{ loading: loading$ | async }">
+    <div class="users-container" *ngIf="users$ | async as users">
+      <div>
+        <ul>
+          <li>{{ user.first_name }} {{ user.last_name }}</li>
+          <li>{{ user.email }}</li>
+          <li>{{ user.gender }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-submit" (click)="loadUsers()">Load Users</button>
 </div>
