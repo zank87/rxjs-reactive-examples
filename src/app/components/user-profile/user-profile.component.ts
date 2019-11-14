@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UserFacadeService } from '../../services/user-facade.service';
-import { Observable } from 'rxjs';
-import { IUser } from '../../models/user/user.model';
+import { Component, OnInit } from '@angular/core'
+import { UserFacadeService } from '../../services/user-facade.service'
+import { Observable } from 'rxjs'
+import { IProfile } from '../../models/user/user.model'
 
 @Component({
   selector: 'app-user-profile',
@@ -9,16 +9,14 @@ import { IUser } from '../../models/user/user.model';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  userProfiles$: Observable<IProfile[]> = this.usersFacade.userProfiles$
+  loading$: Observable<boolean> = this.usersFacade.loading$
 
-  userProfiles$: Observable<IUser[]> = this.usersFacade.userProfiles$;
-  loading$: Observable<boolean> = this.usersFacade.loading$;
+  constructor(private usersFacade: UserFacadeService) {}
 
-  constructor(private usersFacade: UserFacadeService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  loadUsers() {
-    this.usersFacade.getUsers();
+  loadProfiles() {
+    this.usersFacade.getProfiles()
   }
 }

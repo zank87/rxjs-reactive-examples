@@ -1,9 +1,6 @@
 <div class="main">
-  <div class="user-profiles" [ngClass]="{'loading' : loading$ | async}">
-    <div
-      class="profiles-container"
-      *ngIf="userProfiles$ | async as userProfiles"
-    >
+  <div class="user-profiles" [ngClass]="{ loading: loading$ | async }">
+    <div class="profiles-container" *ngIf="userProfiles$ | async as userProfiles">
       <div class="card" *ngFor="let user of userProfiles">
         <div class="ds-top"></div>
         <div class="avatar-holder">
@@ -22,7 +19,7 @@
         <div class="ds-info">
           <div class="ds pens">
             <h6 title="Birth Date">Birth Date</h6>
-            <p>{{ user.birthDate | date: "shortDate" }}</p>
+            <p>{{ user.birthDate | date: 'shortDate' }}</p>
           </div>
           <div class="ds posts">
             <h6 title="Email Address">Email</h6>
@@ -39,5 +36,5 @@
     </div>
     <div class="profile-count">{{ 0 + (userProfiles$ | async)?.length }} profiles loaded</div>
   </div>
-  <button class="btn btn-submit" (click)="loadUsers()">Load Users</button>
+  <button class="btn btn-submit" (click)="loadProfiles()">Load Profiles</button>
 </div>
