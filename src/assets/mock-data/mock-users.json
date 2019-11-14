@@ -1,0 +1,38 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Zank",
+    "email": "jz@thebest.com",
+    "birthDate": "1987-11-29T05:00:00.000Z",
+    "bio": "Hey, that's me! Hello world!",
+    "profilePictureURL": "https://github.com/zank87/rxjs-async/raw/develop/src/assets/mock-data/john-img.jpg",
+    "followerCount": 234
+  },
+  {
+    "firstName": "Cloud",
+    "lastName": "Strife",
+    "email": "c_strife@avalanche.com",
+    "birthDate": "1983-03-09T05:00:00.000Z",
+    "bio": "A guy from some japanese game.",
+    "profilePictureURL": "https://github.com/zank87/rxjs-async/raw/develop/src/assets/mock-data/cloud-img.jpg",
+    "followerCount": 777
+  },
+  {
+    "firstName": "Geralt",
+    "lastName": "of Rivia",
+    "email": "wh1t3_w0lf@witchers.com",
+    "birthDate": "1640-10-16T04:56:02.000Z",
+    "bio": "Another angry guy from a polish book series and video game, that is has been transformed into a Netflix series.",
+    "profilePictureURL": "https://github.com/zank87/rxjs-async/raw/develop/src/assets/mock-data/geralt-img.jpg",
+    "followerCount": 352
+  },
+  {
+    "firstName": "Kvothe",
+    "lastName": "son of Arliden",
+    "email": "six_strings@arcanum.edu",
+    "birthDate": "1202-07-02T04:56:02.000Z",
+    "bio": "He's really great. Too bad the author, Patrick Rothfus, appears to be competing with GRR Martin as to who can take the longest to finish their series.",
+    "profilePictureURL": "https://github.com/zank87/rxjs-async/raw/develop/src/assets/mock-data/kvothe-img.jpg",
+    "followerCount": 1
+  }
+]
