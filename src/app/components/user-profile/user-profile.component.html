@@ -1,16 +1,16 @@
 <div class="main">
   <div class="user-profiles" [ngClass]="{ loading: loading$ | async }">
     <div class="profiles-container" *ngIf="userProfiles$ | async as userProfiles">
-      <div class="card" *ngFor="let user of userProfiles">
+      <div class="card" *ngFor="let profile of userProfiles">
         <div class="ds-top"></div>
         <div class="avatar-holder">
-          <img [src]="user.profilePictureURL" [alt]="user.firstName" />
+          <img [src]="profile.profilePictureURL" [alt]="profile.firstName" />
         </div>
         <div class="name">
-          {{ user.firstName }} {{ user.lastName }}
+          {{ profile.firstName }} {{ profile.lastName }}
           <h6 title="Followers">
             <i class="fas fa-users"></i>
-            <span class="followers">{{ user.followerCount }}</span>
+            <span class="followers">{{ profile.followerCount }}</span>
           </h6>
         </div>
         <div class="button">
@@ -19,17 +19,17 @@
         <div class="ds-info">
           <div class="ds pens">
             <h6 title="Birth Date">Birth Date</h6>
-            <p>{{ user.birthDate | date: 'shortDate' }}</p>
+            <p>{{ profile.birthDate | date: 'shortDate' }}</p>
           </div>
           <div class="ds posts">
             <h6 title="Email Address">Email</h6>
-            <p>{{ user.email }}</p>
+            <p>{{ profile.email }}</p>
           </div>
         </div>
         <div class="ds-skill bio-section">
           <h6>Bio <i class="fa fa-code" aria-hidden="true"></i></h6>
           <div class="bio">
-            {{ user.bio }}
+            {{ profile.bio }}
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
 
   <div class="users-data" [ngClass]="{ loading: loading$ | async }">
     <div class="users-container" *ngIf="users$ | async as users">
-      <div>
+      <div class="user-card" *ngFor="let user of users">
         <ul>
           <li>{{ user.first_name }} {{ user.last_name }}</li>
           <li>{{ user.email }}</li>
@@ -50,4 +50,5 @@
     </div>
   </div>
   <button class="btn btn-submit" (click)="loadUsers()">Load Users</button>
+  <input type="text" [formControl]="filter" placeholder="Filter Users">
 </div>

@@ -3,6 +3,7 @@ import { UserFacadeService } from '../../services/user-facade.service'
 import { Observable } from 'rxjs'
 import { IProfile } from '../../models/user/profile.model'
 import { IUser } from '../../models/user/user.model'
+import { FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-user-profile',
@@ -13,6 +14,7 @@ export class UserProfileComponent implements OnInit {
   userProfiles$: Observable<IProfile[]> = this.usersFacade.userProfiles$
   users$: Observable<IUser[]> = this.usersFacade.users$
   loading$: Observable<boolean> = this.usersFacade.loading$
+  filter: FormControl = new FormControl('');
 
   constructor(private usersFacade: UserFacadeService) {}
 

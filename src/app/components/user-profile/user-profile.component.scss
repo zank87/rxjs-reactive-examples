@@ -205,3 +205,18 @@
   color: white;
   background: crimson;
 }
+
+.users-data {
+  height: 300px;
+  overflow: auto;
+
+  .user-card {
+    border: 1px solid white;
+    margin: 10px 0;
+    padding: 10px;
+
+    ul > li {
+      list-style: none;
+    }
+  }
+}
