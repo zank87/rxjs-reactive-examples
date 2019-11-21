@@ -39,16 +39,31 @@
   <button class="btn btn-submit" (click)="loadProfiles()">Load Profiles</button>
 
   <div class="users-data" [ngClass]="{ loading: loading$ | async }">
-    <div class="users-container" *ngIf="users$ | async as users">
-      <div class="user-card" *ngFor="let user of users">
-        <ul>
-          <li>{{ user.first_name }} {{ user.last_name }}</li>
-          <li>{{ user.email }}</li>
-          <li>{{ user.gender }}</li>
-        </ul>
+    
+    <!-- Sorry for the duplicated html -->
+    <div *ngIf="filteredUsers$ | async as users; else results">
+      <div class="users-container" *ngIf="users$ | async as users">
+        <div class="user-card" *ngFor="let user of users">
+          <ul>
+            <li>{{ user.first_name }} {{ user.last_name }}</li>
+            <li>{{ user.email }}</li>
+            <li>{{ user.gender }}</li>
+          </ul>
+        </div>
       </div>
     </div>
+    <ng-template #results>
+      <div class="users-container" *ngIf="users$ | async as users">
+        <div class="user-card" *ngFor="let user of users">
+          <ul>
+            <li>{{ user.first_name }} {{ user.last_name }}</li>
+            <li>{{ user.email }}</li>
+            <li>{{ user.gender }}</li>
+          </ul>
+        </div>
+    </div>
+    </ng-template>
   </div>
   <button class="btn btn-submit" (click)="loadUsers()">Load Users</button>
-  <input type="text" [formControl]="filter" placeholder="Filter Users">
+  <input class="filter-input"  *ngIf="users$ | async as users" type="text" [formControl]="filter" placeholder="Filter Users">
 </div>
